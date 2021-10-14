@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import { DiaryList } from './components/DiaryList';
+import { ReqComponent } from './components/ReqComponent';
+import { UserComponent } from './components/UserComponent';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  
   return (
+    <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <img src="/img/osrs_logo.png" alt="Old School Runescape"/>
+        <h1>Can I Diary?</h1>
       </header>
+      <main>
+        <UserComponent loading={loading} setLoading={setLoading}/>      
+      {
+        !loading ?   
+          <>      
+            <DiaryList />                    
+            <Switch>
+              <Route path="/" exact Home component={() => <ReqComponent />}></Route>
+              <Route path="/:diaryPath" component={(props) => <ReqComponent diaryPath={props.match.params.diaryPath}/>}></Route>            
+            </Switch>
+          </> : 
+          ''
+      }
+      </main>
     </div>
+    </BrowserRouter>
   );
 }
 
