@@ -14,7 +14,7 @@ export const DiaryList = () => {
             <div className="grid-b">        
                 <ul className="list-container">
                 {
-                    diaries.map((diary) => <DiaryListItem diary={diary} />)
+                    diaries.map((diary) => <DiaryListItem key={diary.id} diary={diary} />)
                 }
                 </ul>
             </div>
