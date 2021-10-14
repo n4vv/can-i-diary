@@ -11,7 +11,8 @@ export const UserComponent = ({loading, setLoading}) => {
 
     useEffect(() => {
        if(query){
-            axios.get(`/m=hiscore_oldschool/index_lite.ws?player=${query}`)
+            // axios.get(`/m=hiscore_oldschool/index_lite.ws?player=${query}`)
+            axios.get(`https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=${query}`)
             .then(function(response){                               
                 return(createPlayerSkills(response.data))
             })
