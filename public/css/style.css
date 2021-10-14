@@ -211,7 +211,7 @@
     font-size: 19px;
     cursor: pointer;
     line-height: 16px;
-    padding: 5px 14px;
+    padding: 4px 10px;
     border-radius: 2px;
     border: none;
     height: 30px;
@@ -239,6 +239,7 @@
   }
   .user-component input {
     height: 30px;
+    width: 120px;
     border-radius: 2px;
     display: inline-block;
     vertical-align: top;
