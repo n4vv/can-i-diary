@@ -7,11 +7,14 @@ export const ReqStatusBar = ({playerLevel, targetLevel, playerXp, boostable}) =>
     return (
         <div className="status-container">
             <div className="status-bar">
-                <div className="status" 
+                {
+                    playerLevel > 1 &&
+                    <div className="status" 
                     style={{                               
                         width: Math.round(playerXp/targetXp*100)+'%'
                     }}
-                >&nbsp;</div>
+                    >&nbsp;</div>
+                }                
                 {
                     boostable &&
                     <div className="boost-status"
