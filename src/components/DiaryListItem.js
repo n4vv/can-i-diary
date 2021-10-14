@@ -3,7 +3,7 @@ import { DiarySubSet } from "./DiarySubSet"
 
 export const DiaryListItem = ({diary}) => {
     return (
-        <li className="diary-list-item">
+        <li key={diary.id} className="diary-list-item">
             <h3><span>{diary.title}</span></h3>   
             <ul className="diary-subset">
             {
