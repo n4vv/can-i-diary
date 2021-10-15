@@ -55,6 +55,13 @@ export class Provider extends Component {
         })
     }
 
+    resetCompletedView = () => {
+        localStorage.removeItem(this.state.playerName+"_completed")
+        this.setState({           
+            completed: resetCompleted(),
+        })
+    }
+
     toggleEdit = () => {       
         this.setState({
             edit: !this.state.edit
@@ -85,6 +92,7 @@ export class Provider extends Component {
                     setCompleted: this.setCompleted,
                     toggleEdit: this.toggleEdit,
                     handleCompletedChange: this.handleCompletedChange,
+                    resetCompletedView: this.resetCompletedView,
                 }
             }}>
                 { this.props.children }

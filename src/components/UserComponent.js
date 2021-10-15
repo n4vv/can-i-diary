@@ -43,17 +43,12 @@ export const UserComponent = ({loading, setLoading}) => {
         actions.setInactive()
     }
 
-    const deletePlayer = () => {
-        localStorage.removeItem(playerName+"_completed")
-        clearPlayer();     
-    }
-
     if (!loading) {       
         if (active) {
             return(
                 <div className="grid-c">
                     <div className="user-component">
-                        <label>Display Name: {playerName}</label> <button className="user-button search" onClick={clearPlayer}><div><span>&#8249;</span><span>&#x1F50E;&#xFE0E;</span></div></button> <button className="user-button delete" onClick={deletePlayer}>&#128465;</button>
+                        <label>Display Name: {playerName}</label> <button className="user-button search" onClick={clearPlayer}><div><span>&#8249;</span><span>&#x1F50E;&#xFE0E;</span></div></button>
                     </div>
                 </div>
             )

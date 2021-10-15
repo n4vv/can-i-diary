@@ -21,7 +21,7 @@
   header img {
     width: 140px;
   }
-  h1, h2, h3, .default, .user-component label, .user-component button {
+  h1, h2, h3, .default, .user-component label, .user-component button, .reset {
     font-family: 'Mirza', cursive;
   }
   .reqlist-item, .diary-list-item, .user-component input, .req-done {
@@ -103,6 +103,21 @@
       border-radius: 2px;
       list-style-type: none;
   }
+
+  .reset {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 5px;
+    margin: 10px auto;
+    display: block;
+    width: auto;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 5px;
+    text-shadow: 1px 1px #000;
+  }
+
   .diary-list-item {      
       border: 1px solid #7e5327;
       border-radius: 2px;
@@ -238,9 +253,7 @@
     font-size: 20px;
     line-height:10px;
   }
-  .user-component button.delete {
-    font-size: 18px;
-  }
+
   .user-component button.search span+span {
     font-size:15px;
   }

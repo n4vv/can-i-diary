@@ -3,7 +3,8 @@ import { AppContext } from '../context';
 import { DiaryListItem } from "./DiaryListItem"
 
 export const DiaryList = () => {
-    const {diaries, active, actions, edit} = useContext(AppContext);
+    const {diaries, active, actions, edit, resetCompletedView} = useContext(AppContext);
+
     return (
         <>
             <div className="grid-a">
@@ -17,6 +18,10 @@ export const DiaryList = () => {
                     diaries.map((diary) => <DiaryListItem key={diary.id} diary={diary} />)
                 }
                 </ul>
+                {
+                    active &&
+                    <button className="reset" onClick={actions.resetCompletedView}>reset</button>
+                }                
             </div>
         </>
     )
