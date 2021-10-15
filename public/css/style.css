@@ -39,7 +39,8 @@
   main {
     display: grid;
     grid-template-columns: 7.5% 1fr 2.5% 1fr 7.5%;
-    grid-template-rows: 55px 1fr;
+    grid-template-rows: min-content 1fr;
+    grid-row-gap: 20px;
   }
   .grid-a, .grid-b {    
     grid-column-start: 2;
@@ -66,25 +67,30 @@
     background-repeat: no-repeat;
     width: 100%;
     height: 0;
-    padding-bottom: 9.498%;
+    padding-bottom: 9.49%;
   }
   .grid-a h2 {
     color:#ff9933;
     text-shadow: 3px 3px #000;
     text-align: center;
     font-size: 28px;
-    margin: 0 0 16px;
+    margin: 0;
   }
-  .edit-button {
+  .edit-button-inner {
     color:#ffffff;
-    text-shadow: 3px 3px #000;
-    background-color: transparent;
+    text-shadow: 3px 3px #000;    
     border: 2px solid #ff9933;
     font-size: 18px;
     line-height: 18px;
-    padding: 3px 4px;
-    cursor:pointer;
+    padding: 3px 4px;    
     border-radius:4px;
+  }
+  .edit-button {
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: inherit;
   }
 
   .list-container {
@@ -199,6 +205,7 @@
   }
   .user-component {
     text-align: right;
+    min-height: 36px;
   }
   .user-component label {
     color: #fff;

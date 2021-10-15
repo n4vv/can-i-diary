@@ -8,7 +8,7 @@ export const DiaryList = () => {
         <>
             <div className="grid-a">
                 <h2>
-                    Achievement Diaries { active ? <><button className="edit-button" onClick={() => actions.toggleEdit()}><span>{ edit ? <>&#9660;</> : <>&#9998;</>}</span></button> &#10004;</> : ''}
+                    Achievement Diaries { active ? <button className="edit-button" onClick={() => actions.toggleEdit()}><span className="edit-button-inner">{ edit ? <>&#9660;</> : <>&#9998;</>}</span> &#10004;</button> : ''}
                 </h2>
             </div>
             <div className="grid-b">        
